@@ -22,7 +22,6 @@ font pango:monospace 8
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id setxkbmap -layout us,ara -variant ,digits -option grp:alt_shift_toggle 
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id light -N 5
 exec --no-startup-id picom 
@@ -31,6 +30,8 @@ exec --no-startup-id unclutter
 exec --no-startup-id udiskie
 exec --no-startup-id numlockx on
 exec --no-startup-id xrandr --output eDP-1 --gamma .85:.85:.82
+exec --no-startup-id setxkbmap -layout us,ara -variant ,digits -option grp:alt_shift_toggle 
+exec --no-startup-id birdtray
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
@@ -50,6 +51,8 @@ bindsym XF86AudioMute exec --no-startup-id pamixer -t && $refresh_i3status
 
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
+
+bindsym $mod+p exec --no-startup-id i3lock-fancy
 
 
 
